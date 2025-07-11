@@ -50,6 +50,8 @@ models:
     # Applies to all files under models/intermediate/
     intermediate:
       materialized: view
+      bikes_database:
+        schema: stg_bikes_database
     
     # Applies to all files under models/mart/
     mart:

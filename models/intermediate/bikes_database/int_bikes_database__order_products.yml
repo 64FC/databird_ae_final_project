@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_bikes_database__order_products
+    description: "{{ doc('int_bikes_database__order_products') }}"
