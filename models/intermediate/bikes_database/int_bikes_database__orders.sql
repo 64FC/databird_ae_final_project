@@ -7,7 +7,7 @@ WITH orders_enrich AS (
         o.shipped_status,
         o.ordered_at,
         o.shipped_at,
-        SUM(o.quantity) AS total_quantity,
+        SUM(op.quantity) AS total_quantity,
         SUM({{ calculate_total_amount('quantity', 'list_price') }}) AS total_amount,
         SUM({{ calculate_total_discounted_amount('quantity', 'list_price', 'discount') }}) AS total_discounted_amount
     FROM {{ ref('stg_bikes_database__orders') }} o
@@ -18,9 +18,7 @@ WITH orders_enrich AS (
         o.staff_id,
         o.shipped_status,
         o.ordered_at,
-        o.shipped_at,
-        o.list_price,
-        o.discount,
+        o.shipped_at
 )
 SELECT
     oe.order_id,
@@ -32,7 +30,7 @@ SELECT
     oe.ordered_at,
     oe.shipped_at,
     c.first_name AS customer_first_name,
-    c.last_name AS customer_last_name
+    c.last_name AS customer_last_name,
     c.city AS customer_city,
     c.state AS customer_state,
     c.zip_code AS customer_zip_code,
