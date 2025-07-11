@@ -44,6 +44,8 @@ models:
     # Applies to all files under models/staging/
     staging:
       materialized: view
+      bikes_database:
+        schema: stg_bikes_database
     
     # Applies to all files under models/intermediate/
     intermediate:
@@ -52,7 +54,3 @@ models:
     # Applies to all files under models/mart/
     mart:
       materialized: table
-
-    # Applies to all files under models/example/
-    example:
-      +materialized: view
