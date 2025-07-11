@@ -1,0 +1,155 @@
+version: 2
+
+models:
+  - name: stg_bikes_database__brands
+    description: "This table contains the name of the brands"
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand"
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_bikes_database__categories
+    description: "This table contains the different categories to track"
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bikes_database__customers
+    description: "This table contains the different customers, with their location at city level"
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customer"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_bikes_database__order_items
+    description: "This table contains information about each item included in an order, with the quantity ordered and the discount applied, if any"
+    columns:
+      - name: order_item_id
+        description: "Primary key, unique identifier for each order_item"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Foreign key, linking to the order concerned"
+        tests:
+          - not_null
+          - relationships:
+              name: order_id_foreign_key_in_stg_bikes_database__order_item
+              to: ref('stg_bikes_database__orders')
+              field: order_id
+      - name: product_id
+        description: "Foreign key, linking to the product in the order"
+        tests:
+          - not_null
+          - relationships:
+              name: product_id_foreign_key_in_stg_bikes_database__order_item
+              to: ref('stg_bikes_database__products')
+              field: product_id
+
+  - name: stg_bikes_database__orders
+    description: "This table contains information about orders placed by customers, including the status of each order"
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key, linking to the customer who placed the order"
+        tests:
+          - not_null
+          - relationships:
+              name: customer_id_foreign_key_in_stg_bikes_database__orders
+              to: ref('stg_bikes_database__customers')
+              field: customer_id
+      - name: staff_id
+        description: "Foreign key, linking to the staff member who helped place the order"
+        tests:
+          - not_null
+          - relationships:
+              name: staff_id_foreign_key_in_stg_bikes_database__orders
+              to: ref('stg_bikes_database__staffs')
+              field: staff_id
+
+  - name: stg_bikes_database__products
+    description: "This table contains information about products and their price"
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product"
+        tests:
+          - unique
+          - not_null
+      - name: brand_id
+        description: "Foreign key, linking to the brand the product belong to"
+        tests:
+          - not_null
+          - relationships:
+              name: brand_id_foreign_key_in_stg_bikes_database__products
+              to: ref('stg_bikes_database__brands')
+              field: brand_id
+      - name: category_id
+        description: "Foreign key, linking to the category the product is classified as"
+        tests:
+          - not_null
+          - relationships:
+              name: category_id_foreign_key_in_stg_bikes_database__products
+              to: ref('stg_bikes_database__categories')
+              field: category_id
+
+  - name: stg_bikes_database__staffs
+    description: "This table contains the staff members, with their store allocation and their manager, if there is"
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff member"
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: "Foreign key, linking the staff member to its allocated store"
+        tests:
+          - not_null
+          - relationships:
+              name: store_id_foreign_key_in_stg_bikes_database__staffs
+              to: ref('stg_bikes_database__stores')
+              field: store_id
+
+  - name: stg_bikes_database__stocks
+    description: "This table contains the stock of each product by store"
+    columns:
+      - name: stock_id
+        description: "Primary key, unique identifier for each row: concatenation of store_id and product_id"
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: "Foreign key, linking to the store the stock is in"
+        tests:
+          - not_null
+          - relationships:
+              name: store_id_foreign_key_in_stg_bikes_database__stocks
+              to: ref('stg_bikes_database__stores')
+              field: store_id
+      - name: product_id
+        description: "Foreign key, linking to the product in stock"
+        tests:
+          - not_null
+          - relationships:
+              name: product_id_foreign_key_in_stg_bikes_database__stocks
+              to: ref('stg_bikes_database__products')
+              field: product_id
+
+  - name: stg_bikes_database__stores
+    description: "This table contains the different stores, with their location at city level"
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each store"
+        tests:
+          - unique
+          - not_null
