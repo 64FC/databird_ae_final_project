@@ -5,6 +5,10 @@ data_tests:
     description: >
       Discount is a deducted percentage of the price, so it should be between 0 (0%) and 1 (100%).
       Therefore return records where min_discount < 0 or max_discount > 1 make the test fail.
+  - name: assert_shipped_is_after_ordered
+    description: >
+      An order should always be shipped after it has been ordered, never before.
+      Therefore return records where a date_diff (in days) is < 0 make the test fail.
   - name: assert_stock_quantity_is_not_negative
     description: >
       Stock is a remaining quantity, so it should always be >= 0.
