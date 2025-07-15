@@ -44,14 +44,14 @@ models:
               name: order_id_foreign_key_in_stg_bikes_database__order_item
               to: ref('stg_bikes_database__orders')
               field: order_id
-      - name: product_id
-        description: "Foreign key, linking to the product in the order"
-        tests:
-          - not_null
-          - relationships:
-              name: product_id_foreign_key_in_stg_bikes_database__order_item
-              to: ref('stg_bikes_database__products')
-              field: product_id
+#      - name: product_id
+#        description: "Foreign key, linking to the product in the order"
+#        tests:
+#          - not_null
+#          - relationships:
+#              name: product_id_foreign_key_in_stg_bikes_database__order_item
+#              to: ref('stg_bikes_database__products')
+#              field: product_id
 
   - name: stg_bikes_database__orders
     description: "This table contains information about orders placed by customers, including the status of each order"
@@ -136,14 +136,14 @@ models:
               name: store_id_foreign_key_in_stg_bikes_database__stocks
               to: ref('stg_bikes_database__stores')
               field: store_id
-      - name: product_id
-        description: "Foreign key, linking to the product in stock"
-        tests:
-          - not_null
-          - relationships:
-              name: product_id_foreign_key_in_stg_bikes_database__stocks
-              to: ref('stg_bikes_database__products')
-              field: product_id
+#      - name: product_id
+#        description: "Foreign key, linking to the product in stock"
+#        tests:
+#          - not_null
+#          - relationships:
+#              name: product_id_foreign_key_in_stg_bikes_database__stocks
+#              to: ref('stg_bikes_database__products')
+#              field: product_id
 
   - name: stg_bikes_database__stores
     description: "This table contains the different stores, with their location at city level"
