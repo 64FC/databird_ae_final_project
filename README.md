@@ -47,7 +47,7 @@ __Votre mission :__
 
 ## Présentation du dataset
 
-_TODO :_ ajouter schema
+<img width="742" height="602" alt="bikes_database_schema" src="https://github.com/user-attachments/assets/4ded7a6e-b490-4123-b83b-c7dec4477bb1" />
 
 __Objectifs :__
 
