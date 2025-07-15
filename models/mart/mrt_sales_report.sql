@@ -6,7 +6,8 @@ SELECT
 --    manager_id,
     shipped_status,
     customer_city,
-    store_city,
+    staff_full_name,
+    store_name,
     SUM(total_quantity) AS total_quantity,
     ROUND(SUM(total_amount), 2) AS total_amount,
     ROUND(SUM(total_discounted_amount), 2) AS total_discounted_amount,
@@ -22,6 +23,7 @@ GROUP BY
 --    report_day,
     shipped_status,
     customer_city,
-    store_city
+    staff_full_name,
+    store_name
 ORDER BY 
     report_date

@@ -29,13 +29,10 @@ SELECT
     oe.shipped_status,
     oe.ordered_at,
     oe.shipped_at,
-    c.customer_first_name,
-    c.customer_last_name,
     c.customer_city,
     c.customer_state,
     c.customer_zip_code,
-    sta.staff_first_name,
-    sta.staff_last_name,
+    sta.staff_full_name,
     sto.store_name,
     sto.store_city,
     sto.store_state,
@@ -50,8 +47,7 @@ INNER JOIN ( -- selecting only active staff members
         staff_id,
         store_id,
         manager_id,
-        staff_first_name,
-        staff_last_name
+        staff_full_name
     FROM {{ ref('stg_bikes_database__staffs') }}
     WHERE active = 1
 ) sta ON oe.staff_id = sta.staff_id
