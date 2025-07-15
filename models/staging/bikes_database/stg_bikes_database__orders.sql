@@ -3,10 +3,10 @@
 -- required_date removed because I do not know what it means: can't extract value from it
 -- shipped_date reworked: putting actual null values instead of 'NULL', then transform to DATE column
 SELECT
-    order_id,
-    customer_id,
+    order_id, -- 1615 distinct
+    customer_id, -- 1445 distinct
 --    store_id,
-    staff_id,
+    staff_id, -- 6 distinct
     CASE
         WHEN order_status IN (1, 2, 3) THEN 0
         ELSE 1

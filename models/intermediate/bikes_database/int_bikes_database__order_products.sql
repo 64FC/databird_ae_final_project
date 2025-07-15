@@ -1,7 +1,7 @@
 SELECT
     p.product_id,
-    p.category_id,
     p.brand_id,
+    p.category_id,
     oi.order_id,
     p.product_name,
     p.list_price,
