@@ -1,8 +1,8 @@
 -- TODO: anonymize instead of not importing?
 SELECT
     customer_id, -- 1445 distinct
-    first_name AS customer_first_name,
-    last_name AS customer_last_name,
+--    first_name AS customer_first_name,
+--    last_name AS customer_last_name,
 --    phone AS customer_phone,
 --    email AS customer_email,
 --    street AS customer_street,
