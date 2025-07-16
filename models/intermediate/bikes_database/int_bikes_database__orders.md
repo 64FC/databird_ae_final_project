@@ -2,8 +2,8 @@
 
 This model provides an aggregated view of orders, combining data from multiple sources such as int_[...]_order_products, customers, staffs and stores.
 It enriches the data with the following metrics:
-- Total Quantity: the total quantity of products by order,
-- Total Amount: the total amount by order,
-- Total Discounted Amount: the total amount by order, with the discount applied to each product.
+- __Total Quantity__: the total quantity of products by order,
+- __Total Amount__: the total amount by order,
+- __Total Discounted Amount__: the total amount by order, with the discount applied to each product.
 
 {% enddocs %}

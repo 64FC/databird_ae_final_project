@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_bikes_database__stocks
+    description: "{{ doc('int_bikes_database__stocks') }}"
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product"
+        tests:
+          - unique
+          - not_null
