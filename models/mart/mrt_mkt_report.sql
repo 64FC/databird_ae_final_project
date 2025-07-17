@@ -10,3 +10,7 @@ SELECT
     AVG(o.total_amount) AS average_amount_order
 FROM {{ ref('stg_bikes_database__customers') }} c
 LEFT JOIN {{ ref('int_bikes_database__orders') }} o ON c.customer_id = o.customer_id
+GROUP BY
+    c.customer_id,
+    c.customer_city,
+    c.customer_state
