@@ -76,3 +76,4 @@ Cette approche vise à transformer Local Bike en une entreprise performante et d
 - [Slides de présentation](https://docs.google.com/presentation/d/1sNzHO66vAH1rjXA0UGc6UpdOqKgHo4rNmtDFrdRDSWA/edit?usp=sharing)
 - [Production report](https://early-reeve.metabaseapp.com/public/dashboard/daf1aa6b-080a-4e4d-a6e1-1e0e155361eb)
 - [Sales report](https://early-reeve.metabaseapp.com/public/dashboard/302e6675-5f61-4182-9506-cd873e6c25fa)
+- [Marketing report](https://early-reeve.metabaseapp.com/public/dashboard/bbf81a37-9e8f-4119-ba12-6dad68597d6d)
