@@ -11,4 +11,3 @@ It includes the following metrics:
 This allows for analysis of performance by Customer, Staff and Store.
 
 {% enddocs %}
-

@@ -5,8 +5,6 @@ SELECT
 --    EXTRACT(DAY FROM ordered_at) AS report_day,
 --    manager_id,
     shipped_status,
-    customer_city,
-    customer_state,
     staff_full_name,
     store_name,
     COUNT(DISTINCT order_id) AS count_orders,
@@ -21,8 +19,6 @@ GROUP BY
 --    report_month,
 --    report_day,
     shipped_status,
-    customer_city,
-    customer_state,
     staff_full_name,
     store_name
 --ORDER BY 
