@@ -29,15 +29,12 @@ SELECT
     oe.shipped_status,
     oe.ordered_at,
     oe.days_shipped_after,
-    c.customer_city,
-    c.customer_state,
     sta.staff_full_name,
     sto.store_name,
     oe.total_quantity,
     oe.total_amount,
     oe.total_discounted_amount
 FROM orders_enrich oe
-INNER JOIN {{ ref('stg_bikes_database__customers') }} c ON oe.customer_id = c.customer_id
 INNER JOIN ( -- selecting only active staff members
     SELECT 
         staff_id,
