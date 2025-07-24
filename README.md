@@ -74,6 +74,10 @@ Cette approche vise à transformer Local Bike en une entreprise performante et d
 ## Rendus
 
 - [Slides de présentation](https://docs.google.com/presentation/d/1sNzHO66vAH1rjXA0UGc6UpdOqKgHo4rNmtDFrdRDSWA/edit?usp=sharing)
-- [Production report](https://early-reeve.metabaseapp.com/public/dashboard/daf1aa6b-080a-4e4d-a6e1-1e0e155361eb)
-- [Sales report](https://early-reeve.metabaseapp.com/public/dashboard/302e6675-5f61-4182-9506-cd873e6c25fa)
-- [Marketing report](https://early-reeve.metabaseapp.com/public/dashboard/bbf81a37-9e8f-4119-ba12-6dad68597d6d)
+- Production report (hébergé sur Metabase durant le 14-d trial) :
+<img width="1358" height="861" alt="Production_report" src="https://github.com/user-attachments/assets/5d53237f-5dd8-48a2-bffb-1b27309a0d8b" />
+- Sales report (hébergé sur Metabase durant le 14-d trial) :
+<img width="1356" height="864" alt="Sales_report" src="https://github.com/user-attachments/assets/4de23bda-a7e9-4b99-a6ee-ede2a1de03d9" />
+- Marketing report (hébergé sur Metabase durant le 14-d trial) :
+<img width="1476" height="827" alt="Marketing_report" src="https://github.com/user-attachments/assets/85ff34ab-10dc-4b1f-b94c-6e31a2f7fcb2" />
+
